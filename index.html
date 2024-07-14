@@ -537,6 +537,34 @@
    <script src="js/typed.min.js"></script>
    <!-- Custom JS -->
    <script src="js/custom.js"></script>
+   <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+      import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDnfH8ZoSI2V2MrKHZgYCVD3XlJf-e3XTY",
+        authDomain: "danganhhaogithubio.firebaseapp.com",
+        projectId: "danganhhaogithubio",
+        storageBucket: "danganhhaogithubio.appspot.com",
+        messagingSenderId: "407411438746",
+        appId: "1:407411438746:web:1d029bf61ca54f9b605b23",
+        measurementId: "G-9YKCJ9MR1H"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      // Track page views
+      logEvent(analytics, 'page_view', {
+         page_path: window.location.pathname
+      });
+    </script>
 </body>
 
 <!-- index.html  26 Nov 2019 03:52:23 GMT -->
